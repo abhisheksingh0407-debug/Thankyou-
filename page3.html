@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Thank You 🤍</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #000428, #004e92);
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    h1 { font-size: 36px; }
-    p { font-size: 20px; line-height: 1.7; }
-    .heart {
-      font-size: 60px;
-      animation: beat 1s infinite;
-    }
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Always Us ❤️</title>
+
+<style>
+body {
+  background: linear-gradient(120deg,#ff512f,#dd2476);
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  padding: 40px;
+}
+
+#text {
+  font-size: 24px;
+  min-height: 180px;
+}
+
+.cartoon {
+  font-size: 90px;
+  margin: 20px 0;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="heart">❤️</div>
+<h1>My Promise 💖</h1>
 
-  <h1>Thank You, Dodo</h1>
+<div class="cartoon">🧸💍</div>
 
-  <p>
-    Thank you for loving me,<br>
-    for staying when it was hard,<br>
-    Past few days many things went wrong i extremely sorry for,<br> 
-    that and i have learned many from that.Thanks for making my life better just by being in it.
-  </p>
+<div id="text"></div>
 
-  <p>
-    I may not always be perfect,<br>
-    but my feelings for you are real,<br>
-    honest, and forever.
-  </p>
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/11/02/audio_1d80a2b6a8.mp3">
+</audio>
 
-  <p>
-    This is not the end,<br>
-    it’s just a small reminder…<br>
-    <strong>You mean everything to me.</strong>
-  </p>
+<script>
+const message =
+"No matter what comes next, I promise to stand by you, support you, love you, and choose you every single day. Always you. Always us.";
+
+let i = 0;
+function type() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(type, 40);
+  }
+}
+type();
+</script>
 
 </body>
 </html>
