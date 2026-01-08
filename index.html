@@ -1,59 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>For My Dodo ❤️</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 { font-size: 36px; }
-    p { font-size: 20px; line-height: 1.7; }
-    button {
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 25px;
-      background: #ff5e7e;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover { background: #ff3b65; }
-  </style>
+<meta charset="UTF-8">
+<title>For My Dodo ❤️</title>
+
+<style>
+body {
+  background: linear-gradient(120deg,#ff758c,#ff7eb3);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+
+#text {
+  font-size: 22px;
+  min-height: 120px;
+}
+
+.cartoon {
+  font-size: 80px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Hey Dodo ❤️</h1>
+<h1>Hey Dodo ❤️</h1>
 
-  <p>
-    This is just a small thank you message,<br>
-    but it comes from my whole heart.
-  </p>
+<div class="cartoon">🐻🌸</div>
 
-  <p>
-    We had days when things were not right,<br>
-    moments when everything felt wrong,<br>
-    but even then… you stayed.
-  </p>
+<div id="text"></div>
 
-  <p>
-    You never gave up on me,<br>
-    you chose us again and again,<br>
-    and for that, I’m forever grateful.
-  </p>
+<button onclick="next()">Continue ➝</button>
 
-  <button onclick="goNext()">Continue →</button>
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_9c8dbebc65.mp3">
+</audio>
 
-  <script>
-    function goNext() {
-      window.location.href = "page2.html";
-    }
-  </script>
+<script>
+const message =
+"From the very first day till today, you have been my comfort, my strength, and my happiest place.";
+
+let i = 0;
+function type() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+type();
+
+function next() {
+  window.location.href = "page2.html";
+}
+</script>
 
 </body>
 </html>
