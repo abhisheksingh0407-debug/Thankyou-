@@ -2,54 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For Dodo 💖</title>
+  <title>For My Dodo ❤️</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
-    .box {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background: rgba(255,255,255,0.85);
-      padding: 30px;
-      border-radius: 20px;
-      animation: fadeIn 2s ease;
+      padding: 40px 20px;
     }
-    h1 {
-      color: #ff4d6d;
-    }
+    h1 { font-size: 36px; }
+    p { font-size: 20px; line-height: 1.7; }
     button {
+      margin-top: 30px;
       padding: 12px 25px;
-      font-size: 16px;
+      font-size: 18px;
       border: none;
-      border-radius: 30px;
-      background: #ff4d6d;
+      border-radius: 25px;
+      background: #ff5e7e;
       color: white;
       cursor: pointer;
-      margin-top: 20px;
     }
-    button:hover {
-      background: #ff1e4d;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    button:hover { background: #ff3b65; }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Hey Dodo 🦤💖</h1>
-    <p>This is something small… but made to thank you for everything.</p>
-    <button onclick="location.href='page2.html'">
-      Click here 🌸
-    </button>
-  </div>
+
+  <h1>Hey Dodo ❤️</h1>
+
+  <p>
+    This is just a small thank you message,<br>
+    but it comes from my whole heart.
+  </p>
+
+  <p>
+    We had days when things were not right,<br>
+    moments when everything felt wrong,<br>
+    but even then… you stayed.
+  </p>
+
+  <p>
+    You never gave up on me,<br>
+    you chose us again and again,<br>
+    and for that, I’m forever grateful.
+  </p>
+
+  <button onclick="goNext()">Continue →</button>
+
+  <script>
+    function goNext() {
+      window.location.href = "page2.html";
+    }
+  </script>
+
 </body>
 </html>
