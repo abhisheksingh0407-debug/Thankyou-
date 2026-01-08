@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Thank You ❤️</title>
-
 <style>
-body {
-  background: linear-gradient(120deg,#6a11cb,#2575fc);
-  color: white;
-  font-family: Arial;
-  text-align: center;
-  padding: 40px;
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  font-family:'Arial',sans-serif;
+  overflow:hidden;
 }
-
-#text {
-  font-size: 22px;
-  min-height: 160px;
+.container{
+  text-align:center;
+  color:white;
+  max-width:80%;
 }
-
-.cartoon {
-  font-size: 80px;
-  margin: 20px 0;
+h1{font-size:2.2rem;}
+button{
+  margin-top:30px;
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
 }
-
-button {
-  padding: 12px 25px;
-  font-size: 18px;
-  border-radius: 25px;
-  border: none;
-  background: white;
-  color: #2575fc;
+.heart{
+  position:absolute;
+  font-size:22px;
+  animation:float 7s linear infinite;
+}
+@keyframes float{
+  0%{bottom:-10px;opacity:1;}
+  100%{bottom:110%;opacity:0;}
 }
 </style>
 </head>
 
 <body>
+<div class="container">
+  <h1 id="text"></h1>
+  <div style="font-size:60px;">🐼💞</div>
+  <button onclick="next()">One Last Page →</button>
+</div>
 
-<h1>Thank You 🥺❤️</h1>
-
-<div class="cartoon">🐼💞</div>
-
-<div id="text"></div>
-
-<button onclick="next()">One Last Page ➝</button>
-
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c8a59c7aa.mp3">
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-const message =
-"You never gave up on me, even when things were hard. Past Few days many things went wrong i am extremely sorry 
-  for that i was my mistake also i learned from it but really felt so lucky that you stayed, you listened, you believed 
-  in us every single time.";
-
-let i = 0;
-function type() {
-  if (i < message.length) {
-    document.getElementById("text").innerHTML += message.charAt(i);
+const msg = "Thank you Dodo… for standing by me even when things went wrong in past few days
+  i am extremely sorry for that it was my mistake also i have learned from it but thankyou for everything, for listening to me, 
+  supporting me, never giving up on me—even during our hardest days.";
+let i=0;
+function type(){
+  if(i<msg.length){
+    document.getElementById("text").innerHTML += msg.charAt(i);
     i++;
-    setTimeout(type, 45);
+    setTimeout(type,70);
   }
 }
 type();
 
-function next() {
-  window.location.href = "page3.html";
+function next(){
+  document.getElementById("music").play();
+  setTimeout(()=>{ window.location.href="page3.html"; },800);
 }
-</script>
 
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},600);
+</script>
 </body>
 </html>
