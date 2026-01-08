@@ -1,60 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Always With You 🤍</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #42275a, #734b6d);
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 { font-size: 34px; }
-    p { font-size: 20px; line-height: 1.7; }
-    button {
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 25px;
-      background: #ff7a8a;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover { background: #ff556d; }
-  </style>
+<meta charset="UTF-8">
+<title>Thank You ❤️</title>
+
+<style>
+body {
+  background: linear-gradient(120deg,#6a11cb,#2575fc);
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  padding: 40px;
+}
+
+#text {
+  font-size: 22px;
+  min-height: 160px;
+}
+
+.cartoon {
+  font-size: 80px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #2575fc;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>For Our Better Tomorrow 🌸</h1>
+<h1>Thank You 🥺❤️</h1>
 
-  <p>
-    I believe in us,<br>
-    in what we are today,<br>
-    and in what we can become tomorrow.
-  </p>
+<div class="cartoon">🐼💞</div>
 
-  <p>
-    No matter what comes,<br>
-    I promise to stand by you,<br>
-    support you, and choose you.
-  </p>
+<div id="text"></div>
 
-  <p>
-    Your dreams matter to me,<br>
-    your happiness matters to me,<br>
-    and so do you… always.
-  </p>
+<button onclick="next()">One Last Page ➝</button>
 
-  <button onclick="goNext()">One Last Thing ❤️</button>
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c8a59c7aa.mp3">
+</audio>
 
-  <script>
-    function goNext() {
-      window.location.href = "page3.html";
-    }
-  </script>
+<script>
+const message =
+"You never gave up on me, even when things were hard. Past Few days many things went wrong i am extremely sorry 
+  for that i was my mistake also i learned from it but really felt so lucky that you stayed, you listened, you believed 
+  in us every single time.";
+
+let i = 0;
+function type() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(type, 45);
+  }
+}
+type();
+
+function next() {
+  window.location.href = "page3.html";
+}
+</script>
 
 </body>
 </html>
